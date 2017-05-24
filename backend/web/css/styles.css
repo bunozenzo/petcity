@@ -1,0 +1,134 @@
+*{
+    padding: 0px;
+    margin:0px;
+}
+#header{
+    background-color: #3399FF;
+    width: 100%;
+    min-height: 70px;
+    position: relative;
+}
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 10px;
+    color:#FF0000;
+}
+/*login*/
+.login-content{
+    -webkit-box-shadow: 1px 1px 20px 4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 20px 4px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 20px 4px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #0d88c1;
+    color: #fff!important;
+}
+/*endlogin*/
+.logout{
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 20px; 
+}
+.logout a{
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px; 
+    margin-right: 20px;
+}
+.logout span{
+    color: #FF9900;
+    font-size: 20px;
+}
+.logout a:hover{
+    color:#FF0000;
+}
+#sidebar,#noidung{
+    margin-top: 30px;
+}
+#sidebar{
+    margin-left: 10px;
+}
+.info{
+    height: 150px;
+}
+.info img{
+    height: 90px;
+    width: 90px;
+}
+.info span{
+    font-size: 13px;
+}
+.conten_title{
+    background: #003399;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 50px;
+}
+#menu-ql{
+    background: #cccccc;
+    border-bottom-right-radius: 5px;
+}
+#menu-ql>ul{
+    padding:0px;
+}
+#menu-ql>ul>li{
+    padding:10px;
+    border-bottom:1px solid #FFF;
+    list-style: none;
+}
+#menu-ql>ul>li>a{
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+#menu-ql>ul>li>a:hover{
+    color:#FF0000;
+}
+
+#noidung{
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 25px;
+    overflow:hidden;
+    clear: both;
+}
+.menu>a{
+    padding:5px 15px;
+    background: red;
+    color:#0E0707;
+    text-decoration: none;
+}
+#footer{
+    color: #fff;
+    background-color: #3399FF;
+}
+#footer .container a{
+    color: #fff;
+}
+/*Report*/
+#content-report,#doanhthu h3{
+    text-transform: uppercase;
+    color: #00aa00;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.info-table{
+    text-align: center;
+    color: #1F568B;
+}
+.info-table a{
+    padding-left: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.item-title td{
+    color: red;
+    text-transform: uppercase;
+}
