@@ -8,6 +8,7 @@ use backend\models\OrderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\OrderDetail;
 
 /**
  * OrderController implements the CRUD actions for Order model.
@@ -66,7 +67,7 @@ class OrderController extends Controller
         $model = new Order();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->order_id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -85,7 +86,7 @@ class OrderController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->order_id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -101,6 +102,11 @@ class OrderController extends Controller
      */
     public function actionDelete($id)
     {
+        $data=OrderDetail::find()->where(['order_id'=>$id])->all();
+        foreach ($data as $model){
+            $model->delete();
+        }
+
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
