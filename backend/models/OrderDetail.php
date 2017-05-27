@@ -35,8 +35,8 @@ class OrderDetail extends \yii\db\ActiveRecord
     {
         return [
             [['order_id', 'pro_id', 'pro_price', 'order_detail_qty'], 'required'],
-            [['order_id', 'pro_id', 'order_detail_qty', 'status'], 'integer'],
-            [['pro_price', 'pro_amount'], 'string', 'max' => 255],
+            [['order_id', 'pro_id', 'order_detail_qty', 'status','pro_price', 'pro_amount'], 'integer'],
+//            [[], 'string', 'max' => 255],
             [['order_id'], 'exist', 'skipOnError' => true, 'targetClass' => Order::className(), 'targetAttribute' => ['order_id' => 'order_id']],
             [['pro_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['pro_id' => 'pro_id']],
         ];

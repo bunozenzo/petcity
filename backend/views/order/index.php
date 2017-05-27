@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\OrderSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Orders';
+$this->title = 'Hóa đơn';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="panel-body">
             <p class="pull-right">
-                <?= Html::a('Create Order', ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Tạo mới hóa đơn', ['create'], ['class' => 'btn btn-success']) ?>
             </p>
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
@@ -51,16 +51,16 @@ $this->params['breadcrumbs'][] = $this->title;
                         'attribute'=>'customer_id',
                         'content'=>function($model){
                             if(!isset($model->customer_id)){
-                                return '<span class="label label-info">None acc</span>';
+                                return '<span class="label label-info">No acc</span>';
                             }else{
                                 return $model->customer_id;
                             }
                         },
                         'headerOptions'=>[
-                            'style'=>'width:15px;text-align:center;'
+                            'style'=>'width:150px;text-align:center;'
                         ],
                         'contentOptions'=>[
-                            'style'=>'width:15px;text-align:center;'
+                            'style'=>'width:150px;text-align:center;'
                         ],
                     ],
 //                    'name',
@@ -105,9 +105,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'attribute'=>'order_amount',
                         'content'=>function($model){
-                            $tongtien=$model->order_amount." VNĐ";
-                         return $tongtien;
+                            return number_format($model->order_amount,'0','',',').'VNĐ';
                         },
+
                         'headerOptions'=>[
                             'style'=>'width:100px;text-align:center;'
                         ],
@@ -154,13 +154,13 @@ $this->params['breadcrumbs'][] = $this->title;
                         'template' => '{view} {update} {delete} {my_button}',
                         'buttons'=>[
                             'view'=>function($url,$model){
-                                return Html::a('View',$url,['class'=>'btn btn-sm btn-primary']);
+                                return Html::a('Xem',$url,['class'=>'btn btn-sm btn-primary']);
                             },
                             'update'=>function($url,$model){
-                                return Html::a('Edite',$url,['class'=>'btn btn-sm btn-success']);
+                                return Html::a('Sửa',$url,['class'=>'btn btn-sm btn-success']);
                             },
                             'delete'=>function($url,$model){
-                                return Html::a('<span class="glyphicon glyphicon-remove"></span>Delete',$url,
+                                return Html::a('Xóa',$url,
                                     [
                                         'class'=>'btn btn-sm btn-danger',
                                         'data-confirm'=>'Bạn có chắc muốn xóa '.$model->order_id,
@@ -169,7 +169,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             },
                             'my_button' => function ($url,$model) {
                                 $url = Yii::$app->urlManager->createUrl(['order-detail','id_order_detail'=>$model->order_id]);
-                                return Html::a('Chi tiết hóa đơn',$url,
+                                return Html::a('CTHD',$url,
                                     ['class'=>'btn btn-sm btn-warning']);
                             },
                         ]

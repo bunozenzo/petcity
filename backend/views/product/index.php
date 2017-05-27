@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="panel-body">
              <p class="pull-right">
-                <?= Html::a('Create Product', ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Tạo mới', ['create'], ['class' => 'btn btn-success']) ?>
             </p>
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
@@ -110,13 +110,13 @@ $this->params['breadcrumbs'][] = $this->title;
                   ['class' => 'yii\grid\ActionColumn',
                'buttons'=>[
                 'view'=>function($url,$model){
-                    return Html::a('View',$url,['class'=>'btn btn-sm btn-info']);
+                    return Html::a('Xem',$url,['class'=>'btn btn-sm btn-info']);
                 },
                 'update'=>function($url,$model){
-                    return Html::a('Edite',$url,['class'=>'btn btn-sm btn-warning']);
+                    return Html::a('Sửa',$url,['class'=>'btn btn-sm btn-warning']);
                 },
                 'delete'=>function($url,$model){
-                    return Html::a('<span class="glyphicon glyphicon-remove"></span>Delete',$url,
+                    return Html::a('Xóa',$url,
                         [
                             'class'=>'btn btn-sm btn-danger',
                             'data-confirm'=>'Bạn có chắc muốn xóa '.$model->pro_id,

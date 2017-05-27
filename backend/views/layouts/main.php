@@ -121,12 +121,12 @@ AppAsset::register($this);
     			<li class="header">MENU</li>
     			<li class="active treeview">
     				<a href="<?php echo Yii::$app->homeUrl; ?>">
-    					<i class="fa fa-dashboard"></i> <span>Trang chủ</span>
+                        <i class="fa fa-home" aria-hidden="true"></i> <span>Trang chủ</span>
     				</a>
     			</li>
     			<li class="treeview">
     				<a href="#">
-    					<i class="fa fa-files-o"></i>
+                        <i class="fa fa-address-book" aria-hidden="true"></i>
     					<span>Quản lý người dùng</span>
     					<span class="pull-right-container">
     						<i class="fa fa-angle-left pull-right"></i>
@@ -152,7 +152,7 @@ AppAsset::register($this);
     			</li>
     			<li class="treeview">
     				<a href="#">
-    					<i class="fa fa-laptop"></i>
+                        <i class="fa fa-edit"></i>
     					<span>Quản lý sản phẩm</span>
     					<span class="pull-right-container">
     						<i class="fa fa-angle-left pull-right"></i>
@@ -179,7 +179,7 @@ AppAsset::register($this);
                 </li>
                 <li class="treeview">
                 	<a href="#">
-                		<i class="fa fa-edit"></i> <span>Đơn hàng</span>
+                	<i class="fa fa-money" aria-hidden="true"></i> <span>Đơn hàng</span>
                 		<span class="pull-right-container">
                 			<i class="fa fa-angle-left pull-right"></i>
                 		</span>
@@ -188,12 +188,12 @@ AppAsset::register($this);
                 		<li><a href="<?php  echo Yii::$app->homeUrl."payment"?>"><i class="fa fa-circle-o"></i>Thanh toán</a></li>
                 		<li><a href="<?php  echo Yii::$app->homeUrl."deliver"?>"><i class="fa fa-circle-o"></i>Vận chuyển</a></li>
                 		<li><a href="<?php  echo Yii::$app->homeUrl."order"?>"><i class="fa fa-circle-o"></i> Hóa đơn</a></li>
-                		<li><a href="<?php  echo Yii::$app->homeUrl."order-detail"?>"><i class="fa fa-circle-o"></i> Chi tiết hóa đơn</a></li>
+<!--                		<li><a href="--><?php // echo Yii::$app->homeUrl."order-detail"?><!--"><i class="fa fa-circle-o"></i> Chi tiết hóa đơn</a></li>-->
                 	</ul>
                 </li>
                     <li class="treeview">
                 	<a href="#">
-                		<i class="fa fa-edit"></i> <span>Báo cáo-Thống kê</span>
+                        <i class="fa fa-laptop"></i> <span>Báo cáo-Thống kê</span>
                 		<span class="pull-right-container">
                 			<i class="fa fa-angle-left pull-right"></i>
                 		</span>

@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\OrderDetail */
 
-$this->title = 'Update Order Detail: ' . $model->order_detail_id;
-$this->params['breadcrumbs'][] = ['label' => 'Order Details', 'url' => ['index']];
+$this->title = 'Sửa Mã CTHD : ' . $model->order_detail_id;
+$this->params['breadcrumbs'][] = ['label' => 'Chi tiết hóa đơn', 'url' => ['index','id_order_detail'=> $model->order_id]];
 $this->params['breadcrumbs'][] = ['label' => $model->order_detail_id, 'url' => ['view', 'id' => $model->order_detail_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Sửa';
 ?>
 <div class="order-detail-update">
     <div class="panel panel-primary">

@@ -8,7 +8,7 @@ use backend\models\Product;
 /* @var $searchModel backend\models\OrderDetailSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Order Details';
+$this->title = 'Chi tiết hóa đơn';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-detail-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="panel-body">
             <p class="pull-right">
-                <?= Html::a('Create Order Detail', ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Tạo mới', ['create'], ['class' => 'btn btn-success']) ?>
             </p>
 
             <?= GridView::widget([
@@ -76,6 +76,9 @@ $this->params['breadcrumbs'][] = $this->title;
 //                    'pro_price',
                     [
                         'attribute'=>'pro_price',
+                        'content'=>function($model){
+                          return number_format($model->pro_price,'0','',',').'VNĐ';
+                        },
                         'headerOptions'=>[
                             'style'=>'width:15px;text-align:center;'
                         ],
@@ -96,6 +99,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     // 'pro_amount',
                     [
                         'attribute'=>'pro_amount',
+                        'content'=>function($model){
+                            return number_format($model->pro_amount,'0','',',').'VNĐ';
+                        },
                         'headerOptions'=>[
                             'style'=>'width:100px;text-align:center;'
                         ],
@@ -123,13 +129,13 @@ $this->params['breadcrumbs'][] = $this->title;
                     ['class' => 'yii\grid\ActionColumn',
                         'buttons'=>[
                             'view'=>function($url,$model){
-                                return Html::a('View',$url,['class'=>'btn btn-sm btn-primary']);
+                                return Html::a('Xem',$url,['class'=>'btn btn-sm btn-primary']);
                             },
                             'update'=>function($url,$model){
-                                return Html::a('Edite',$url,['class'=>'btn btn-sm btn-success']);
+                                return Html::a('Sửa',$url,['class'=>'btn btn-sm btn-success']);
                             },
                             'delete'=>function($url,$model){
-                                return Html::a('<span class="glyphicon glyphicon-remove"></span>Delete',$url,
+                                return Html::a('Xóa',$url,
                                     [
                                         'class'=>'btn btn-sm btn-danger',
                                         'data-confirm'=>'Bạn có chắc muốn xóa '.$model->order_id,

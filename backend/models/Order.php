@@ -46,10 +46,10 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['customer_id', 'payment_id', 'deliver_id', 'status', 'date_create', 'date_update'], 'integer'],
+            [['customer_id', 'payment_id', 'deliver_id', 'status', 'date_create', 'date_update', 'order_amount'], 'integer'],
             [['payment_id', 'deliver_id', 'date_create', 'date_update'], 'required'],
             [['name', 'name_ship'], 'string', 'max' => 40],
-            [['email', 'phone', 'address', 'email_ship', 'phone_ship', 'address_ship', 'request', 'order_amount'], 'string', 'max' => 255],
+            [['email', 'phone', 'address', 'email_ship', 'phone_ship', 'address_ship', 'request'], 'string', 'max' => 255],
             [['deliver_id'], 'exist', 'skipOnError' => true, 'targetClass' => Deliver::className(), 'targetAttribute' => ['deliver_id' => 'del_id']],
             [['payment_id'], 'exist', 'skipOnError' => true, 'targetClass' => Payment::className(), 'targetAttribute' => ['payment_id' => 'pay_id']],
         ];
@@ -61,12 +61,12 @@ class Order extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'order_id' => 'Mã đơn hàng',
+            'order_id' => 'Mã HĐ',
             'customer_id' => 'Mã người dùng',
-            'name' => 'Họ tên',
-            'email' => 'Email',
+            'name' => 'Họ tên người đặt',
+            'email' => 'Email người đặt',
             'phone' => 'Điện thoại',
-            'address' => 'Địa chỉ',
+            'address' => 'Địa chỉ người đặt',
             'name_ship' => 'Tên người nhận',
             'email_ship' => 'Email người nhận',
             'phone_ship' => 'Điện thoại người nhận',

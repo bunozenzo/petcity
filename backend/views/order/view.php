@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Order */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Hóa đơn', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="order-view">
@@ -17,8 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="panel-body">
             <p class="pull-right">
-                <?= Html::a('Update', ['update', 'id' => $model->order_id], ['class' => 'btn btn-primary']) ?>
-                <?= Html::a('Delete', ['delete', 'id' => $model->order_id], [
+                <?= Html::a('Sửa', ['update', 'id' => $model->order_id], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a('Xóa', ['delete', 'id' => $model->order_id], [
                     'class' => 'btn btn-danger',
                     'data' => [
                         'confirm' => 'Are you sure you want to delete this item?',

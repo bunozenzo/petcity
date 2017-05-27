@@ -52,11 +52,11 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             [['pro_name', 'pro_image', 'pro_price', 'pro_cat_id', 'pro_supplier_id', 'pro_made_id', 'pro_size_id', 'description', 'date_create', 'date_update'], 'required', 'message' => '{attribute} không được để trống'],
-            [['pro_sale_off', 'pro_cat_id', 'pro_supplier_id', 'pro_made_id', 'pro_size_id', 'status', 'date_create', 'date_update'], 'integer'],
+            [['pro_sale_off', 'pro_cat_id', 'pro_supplier_id', 'pro_made_id', 'pro_size_id', 'status', 'date_create', 'date_update', 'pro_price'], 'integer'],
             [['description'], 'string'],
             [['begin_date_sale_off', 'end_date_sale_off'], 'safe'],
             [['pro_name'], 'string', 'max' => 100],
-            [['pro_image', 'pro_image1', 'pro_image2', 'pro_price'], 'string', 'max' => 255],
+            [['pro_image', 'pro_image1', 'pro_image2'], 'string', 'max' => 255],
             [['pro_cat_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['pro_cat_id' => 'cat_id']],
             [['pro_made_id'], 'exist', 'skipOnError' => true, 'targetClass' => Made::className(), 'targetAttribute' => ['pro_made_id' => 'made_id']],
             [['pro_size_id'], 'exist', 'skipOnError' => true, 'targetClass' => Size::className(), 'targetAttribute' => ['pro_size_id' => 'size_id']],
