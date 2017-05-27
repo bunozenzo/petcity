@@ -33,14 +33,25 @@ $(document).ready(function () {
       $('#show_img').attr('data-zoom-image', href);
     });
      $('input[type="checkbox"]').click(function(){
-        var name=$("#name").val();
-        var email=$("#email").val();
-        var phone=$("#phone").val();
-        var address=$("#address").val();
-        $('#name_ship').attr('value', name);
-        $('#email_ship').attr('value', email);
-        $('#phone_ship').attr('value', phone);
-        $('#address_ship').attr('value', address);
+         if($(this).prop("checked") == true){
+             var name=$("#name").val();
+             var email=$("#email").val();
+             var phone=$("#phone").val();
+             var address=$("#address").val();
+             $('#name_ship').attr('value', name);
+             $('#email_ship').attr('value', email);
+             $('#phone_ship').attr('value', phone);
+             $('#address_ship').attr('value', address);
+             // alert("Checkbox đã đánh dấu.");
+         }
+         else if($(this).prop("checked") == false){
+             $('#name_ship').attr('value','');
+             $('#email_ship').attr('value','');
+             $('#phone_ship').attr('value','');
+             $('#address_ship').attr('value','');
+
+         }
+
         });
     $("img#show_img").elevateZoom({
         gallery:'gallery_01', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'

@@ -107,7 +107,7 @@ class Product extends \yii\db\ActiveRecord
 
     public function getNewpro()
     {
-        $data = Product::findBysql("select * from Product where DATE(FROM_UNIXTIME(date_create)) BETWEEN SUBDATE(CURDATE(), INTERVAL 10 DAY) and  CURDATE() and status=1 ORDER  By date_create desc limit 5")->asArray()->all();
+        $data = Product::findBysql("select * from Product where DATE(FROM_UNIXTIME(date_create)) BETWEEN SUBDATE(CURDATE(), INTERVAL 25 DAY) and  CURDATE() and status=1 ORDER  By date_create desc limit 5")->asArray()->all();
         return $data;
     }
 

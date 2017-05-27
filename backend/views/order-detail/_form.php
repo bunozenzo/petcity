@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'pro_amount')->textInput(['maxlength' => true]) ?>
 
-            <?= $form->field($model, 'status')->textInput() ?>
+            <?= $form->field($model, 'status')->radioList(array(1 => 'Đặt hàng', 0 =>'Giao hàng',2 =>'Thanh toán',3=>'Hủy bỏ'), array('class' => 'i-checks'))  ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

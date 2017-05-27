@@ -34,7 +34,13 @@
                         <tr>
                             <td  class="success"><?php echo $item->pro_name; ?></td>
                             <td><?php echo $item->qtt; ?></td>
-                            <td><?php echo number_format($item->pro_price,0,' ',',') ; ?></td>
+                            <td>
+                                <?php
+                                if(strtotime(date('Y/m/d'))>=strtotime($item->begin_date_sale_off)&&strtotime(date('Y/m/d'))<=strtotime($item->end_date_sale_off)){
+                                    echo number_format($item->pro_price*(1-($item->pro_sale_off)/100),0,' ',',') ;
+                                }else{
+                                    echo number_format($item->pro_price,0,' ',',') ;
+                                }  ?> VNĐ</td>
                             <td><?php echo number_format($item->pro_price* $item->qtt*(1-($item->pro_sale_off)/100),0,' ',',');?></td>
                         </tr>
                     <?php $n++; endforeach; ?>
@@ -104,7 +110,7 @@
             </div>
              <?= $form->field($model, 'amount')->hiddenInput() ?>
                      <div class="form-group">
-                        <?= Html::submitButton('Thanh toán', ['class' => 'btn btn-warning pull-right demo1', 'name' => 'signup-button']) ?>
+                        <?= Html::submitButton('Đặt hàng', ['class' => 'btn btn-warning pull-right demo1', 'name' => 'signup-button']) ?>
                     </div> 
                       <?php ActiveForm::end(); ?>    
            

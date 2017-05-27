@@ -81,7 +81,7 @@ $this->title='Shopping cart';
 			</table>
 			<div class="cart-action clearfix pull-right">
 				<?php echo Html::a('Xóa giỏ hàng',['/cart/clear'],['class'=>'btn btn-danger']); ?>
-				<?php echo Html::a('Tiến hành thanh toán',['/order/index'],['class'=>'btn btn-warning']); ?>
+				<?php echo Html::a('Tiến hành đặt hàng',['/order/index'],['class'=>'btn btn-warning']); ?>
 			</div>
 		</div>
 	</div>

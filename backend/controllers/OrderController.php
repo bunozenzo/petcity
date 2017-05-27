@@ -66,8 +66,18 @@ class OrderController extends Controller
     {
         $model = new Order();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->date_create=time();
+            $model->date_update=time();
+            if($model->save()){
+                Yii::$app->session->setFlash('info',"Thêm mới thành công");
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('info',"Thêm mới không thành công");
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -85,8 +95,17 @@ class OrderController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->date_update=time();
+            if($model->save()){
+                Yii::$app->session->setFlash('warning',"Thêm mới thành công");
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('warning',"Thêm mới không thành công");
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
         } else {
             return $this->render('update', [
                 'model' => $model,

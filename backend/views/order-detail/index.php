@@ -113,10 +113,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'attribute'=>'status',
                         'content'=>function($model){
-                            if($model->status==0){
-                                return '<span class="label label-info">Thanh toán</span>';
+                            if($model->status==1){
+                                return '<span class="label label-info">Đặt hàng</span>';
+                            }else if($model->status==0){
+                                return '<span class="label label-success">Giao hàng</span>';
+                            }else if($model->status==2){
+                                return '<span class="label label-danger">Thanh toán</span>';
                             }else{
-                                return '<span class="label label-danger">Đặt hàng</span>';
+                                return '<span class="label label-success">Hủy bỏ</span>';
                             }
                         },
                         'headerOptions'=>[

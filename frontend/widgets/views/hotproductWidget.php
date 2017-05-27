@@ -8,7 +8,7 @@
                         <?php if(strtotime(date('Y/m/d'))>=strtotime($value['begin_date_sale_off'])&&strtotime(date('Y/m/d'))<=strtotime($value['end_date_sale_off'])){ ?>
                             <div class="pro_sale"><?php echo $value['pro_sale_off'] ?> %</div>
                         <?php } ?>
-                        <?php if(strtotime(date('Y/m/d',$value['date_create']))<=strtotime(date('Y/m/d'))&&strtotime(date('Y/m/d',$value['date_create']))>=strtotime ( '-10 day' , strtotime (date('Y/m/d') ) )){
+                        <?php if(strtotime(date('Y/m/d',$value['date_create']))<=strtotime(date('Y/m/d'))&&strtotime(date('Y/m/d',$value['date_create']))>=strtotime ( '-25 day' , strtotime (date('Y/m/d') ) )){
 
                             ?>
                             <div class="pro_new">
