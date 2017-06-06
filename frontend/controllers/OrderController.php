@@ -104,7 +104,7 @@ class OrderController extends \yii\web\Controller
                     }
                     $mail = new sendmail();
                     $emailn = $post['email'];
-                    $mail->mail($emailn, "Đơn Hàng", $content);
+//                    $mail->mail($emailn, "Đơn Hàng", $content);
                     $cart = new Cart();
                     $cart->removeall();
                     return $this->redirect(['about']);
@@ -213,7 +213,7 @@ class OrderController extends \yii\web\Controller
                     }
                     $mail = new sendmail();
                     $emailn = $post['email'];
-                    $mail->mail($emailn, "Đơn Hàng", $content);
+//                    $mail->mail($emailn, "Đơn Hàng", $content);
                     $cart = new Cart();
                     $cart->removeall();
                     return $this->redirect(['about']);

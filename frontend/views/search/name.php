@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Html;
 use frontend\widgets\menuContentWidget;
+use yii\helpers\Url;
+use yii\widgets\ActiveForm;
 use yii\widgets\LinkPager;
  $homeUrl= str_replace('/frontend/web', '', Yii::$app->urlManager->baseUrl);
 ?> 
@@ -23,13 +25,13 @@ use yii\widgets\LinkPager;
 		        	<?php if(strtotime(date('Y/m/d'))>=strtotime($value['begin_date_sale_off'])&&strtotime(date('Y/m/d'))<=strtotime($value['end_date_sale_off'])){ ?>
 		        	<div class="pro_sale"><?php echo $value['pro_sale_off'] ?> %</div>
 		        	<?php } ?>
-		        	<?php if(strtotime(date('Y/m/d',$value['date_create']))<=strtotime(date('Y/m/d'))&&strtotime(date('Y/m/d',$value['date_create']))>=strtotime ( '-10 day' , strtotime (date('Y/m/d') ) )){ 
+                        <?php if (strtotime(date('Y/m/d', $value['date_create'])) <= strtotime(date('Y/m/d')) && strtotime(date('Y/m/d', $value['date_create'])) >= strtotime('-25 day', strtotime(date('Y/m/d')))) {
 
-		        		?>
-		        	<div class="pro_new">
-		        	<img src="<?php echo $homeUrl;?>/uploads/newicon.png"></div>
-		        	<?php } ?>
-		        	<img src="<?php echo $value['pro_image'] ?>" alt="">
+                            ?>
+                            <div class="pro_new">
+                                <img src="<?php echo $homeUrl; ?>/uploads/newicon.png"></div>
+                        <?php } ?>
+                        <img src="<?php echo $value['pro_image'] ?>" alt="">
 		        	</div>
 		        	</a>
 		        	<div class="pro_name">

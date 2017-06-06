@@ -28,6 +28,9 @@ use yii\widgets\ActiveForm;
 
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'gender')->radioList(array(1 => 'Nam', 0 =>'Nữ'), array('class' => 'i-checks'))  ?>
+
+
             <?= $form->field($model, 'phone')->textInput() ?>
 
             <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>

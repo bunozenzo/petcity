@@ -37,8 +37,8 @@ class Supplier extends \yii\db\ActiveRecord
     {
         return [
             [['sup_name', 'mobile', 'address', 'date_create', 'date_update'], 'required','message'=>'{attribute} không được để trống'],
-            [['status', 'date_create', 'date_update'], 'integer'],
-            [['sup_name', 'mobile', 'address'], 'string', 'max' => 255],
+            [['status', 'mobile', 'date_create', 'date_update'], 'integer'],
+            [['sup_name', 'address'], 'string', 'max' => 255],
             [['sup_name'], 'unique'],
             [['mobile'], 'unique'],
             [['address'], 'unique'],

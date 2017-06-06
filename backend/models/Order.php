@@ -46,10 +46,10 @@ class Order extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['customer_id', 'payment_id', 'deliver_id', 'status', 'date_create', 'date_update', 'order_amount'], 'integer'],
+            [['customer_id', 'payment_id', 'deliver_id', 'status', 'date_create', 'date_update', 'order_amount','phone_ship', 'phone'], 'integer'],
             [['payment_id', 'deliver_id', 'date_create', 'date_update'], 'required'],
             [['name', 'name_ship'], 'string', 'max' => 40],
-            [['email', 'phone', 'address', 'email_ship', 'phone_ship', 'address_ship', 'request'], 'string', 'max' => 255],
+            [['email', 'address', 'email_ship',  'address_ship', 'request'], 'string', 'max' => 255],
             [['deliver_id'], 'exist', 'skipOnError' => true, 'targetClass' => Deliver::className(), 'targetAttribute' => ['deliver_id' => 'del_id']],
             [['payment_id'], 'exist', 'skipOnError' => true, 'targetClass' => Payment::className(), 'targetAttribute' => ['payment_id' => 'pay_id']],
         ];

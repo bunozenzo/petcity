@@ -130,7 +130,7 @@ class Product extends \yii\db\ActiveRecord
     public function getNewproduct()
     {
         $pagination = $this->getPagerNewproduct();
-        $data = Product::findBysql(" select * from Product where DATE(FROM_UNIXTIME(date_create)) BETWEEN SUBDATE(CURDATE(), INTERVAL 10 DAY) and  CURDATE() and status=1 ORDER  By date_create desc")->asArray()
+        $data = Product::findBysql(" select * from Product where DATE(FROM_UNIXTIME(date_create)) BETWEEN SUBDATE(CURDATE(), INTERVAL 25 DAY) and  CURDATE() and status=1 ORDER  By date_create desc")->asArray()
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
